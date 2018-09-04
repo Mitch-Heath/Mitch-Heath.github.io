@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mitch Heath</title>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+    <div id="main">
+        <div id="header">
+            <div id="logo">
+                <h1>Mitchell Heath <a href="#">QAC</a></h1>
+                <div class="slogan">Digital CV</div>
+            </div>
+            <div id="menubar">
+                <ul id="menu">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./include/projects.html">Projects</a></li>
+                    <li><a href="./include/skills.html">Skills</a></li>
+                    <li><a href="./include/contact.html">Contact</a></li>
+                    <li class="current"><a href="./jsplayground.html">JavaScript</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="content">
+            <div id="site_content">
+                <div id="exercises">
+                    <h1>JavaScript Testing</h1>
+                    <form>
+                        <input id="value1" type="text" placeholder="Enter first value" />
+                        <input id="value2" type="text" name="value2" placeholder="Enter second value" />
+                    </form>
+                    <script>
+                        function check() {
+                            if (window.document.getElementById('value1').value == "" & window.document.getElementById('value2').value == "") {
+                                window.alert("Invalid inputs.");
+                                window.document.getElementById('value1').focus();
+                                window.document.getElementById('value1').select();
+                            } else if (window.document.getElementById('value1').value == "") {
+                                window.alert("Invalid first value.");
+                                window.document.getElementById('value1').focus();
+                                window.document.getElementById('value1').select();
+                            } else if (window.document.getElementById('value2').value == "") {
+                                window.alert("Invalid second input.");
+                                window.document.getElementById('value2').focus();
+                                window.document.getElementById('value2').select();
+                            } else {
+                                console.log("Valid inputs");
+                            }
+                        }
+                        function calcTwo(operator) {
+                            console.log(window.document.getElementById('value2').value);
+                            var input1 = parseInt(window.document.getElementById('value1').value);
+                            var input2 = parseInt(window.document.getElementById('value2').value);
+                            check();
+                            switch (operator) {
+                                case 'plus':    return input1 + input2;
+                                case 'minus':   return input1 - input2;
+                                case 'mult':    return input1 * input2;
+                                case 'div':
+                                if (input2 != 0 && input2 != NaN && input2 != null) {
+                                    return input1 / input2;
+                                } else {
+                                    return "Can't divide by zero!";
+                                }
+                                default:        return "Invalid operator";; 
+                            }
+                        }
+                        function assign(button) {
+                            document.getElementById('output2').value = calcTwo(button);
+                        }
+                    </script>
+                    <button type="button" onclick = assign('plus')> PLUS </button>
+                    <button type="button" onclick = assign('minus')> MINUS </button>
+                    <button type="button" onclick = assign('mult')> MULTIPLY </button>
+                    <button type="button" onclick = assign('div')> DIVIDE </button>
+                    
+                    <input id="output2" type="text" placeholder="Output" />
+
+                    <!-- <button type="button" onclick="document.getElementById('output2').value = mult('value1','value2')">Calculate multiplication to box</button>
+                    <input id="output2" type="text" placeholder="Output2" /> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
