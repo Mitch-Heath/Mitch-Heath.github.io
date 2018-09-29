@@ -1,0 +1,66 @@
+body
+{ font: normal .80em 'trebuchet ms', arial, sans-serif;
+  background: #0D3D59;
+}
+h1, h2, h3, h4, h5, h6 { 
+    font: arial, sans-serif;
+    color: #FFF;
+    margin: 15px 0 2px 0;
+    padding: 2px 0 2px 0;
+}
+
+h1 {
+    font-size: 30px;
+    left: 0px;
+    display: inline-block;
+    width:300px;
+    margin-bottom: 0px;
+    background: rgba(10,100,255,0.5);
+    color: white;
+    text-align: center;
+ 
+}
+.span {
+    font-size: 20px;
+    color: white;
+}
+p {
+    color:white;
+    padding: 0px;
+    margin: 0px;
+    display: inline;
+}
+.reset {
+    margin-left: 20px;
+    text-align: center;
+    width: 200px;
+    align-content: center;
+    align-self: center;
+    align-items: center; 
+}
+.seatOff {
+    content:url("../img/SeatingOff.png");
+    /* height: 30px;
+    width: 30px;
+    background-color: white; */
+    position: absolute;
+}
+.seatOn {
+    content:url("../img/SeatingOn.png");
+    /* height: 30px;
+    width: 30px;
+    background-color: red; */
+    position: absolute;
+}
+ .seatSelect {
+    content:url("../img/SeatingSelected.png");
+    /* height: 30px;
+    width: 30px;
+    background-color: green; */
+    position: absolute;
+}
+.screen {
+    background-size: cover;
+    background: firebrick;
+    background-color: blanchedalmond;
+}
