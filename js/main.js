@@ -1,23 +1,26 @@
-var seatBuy = 0;
+var ticketCount = 0;
 var seatSelectedCount = 0;
-
+ 
 
 function openScreen() {
+    var test11 = String.fromCharCode(68);
+    console.log(test11);
     var screen = document.getElementById("screen");
-    var rowCount = Object.keys(seats).length;
-    var seatCount = 6;
-    seatBuy = document.getElementById('seatCount').value;
+    //var rowCount = Object.keys(seats).length; // From screenSeats1
+    var rowCount = document.getElementById("rowCount").value;
+    var colCount =  document.getElementById("colCount").value;
+    ticketCount = document.getElementById('ticketCount').value;
     seatSelectedCount = 0;
     seatsSelected.innerHTML='';
 
-    console.log(seatBuy);
     for (var i = 0; i < rowCount; i++) {
-        var row = Object.keys(seats)[i];
+        //var row = Object.keys(seats)[i];
+        var row = String.fromCharCode(65+i);
+        console.log(row);
+        for (var j = 0; j < colCount; j++) {
 
-        for (var j = 0; j < seatCount; j++) {
-
-            var ySpacing = 35*(i+8);
-            var xSpacing = 35*(j+4);
+            var ySpacing = 35*(i+12);
+            var xSpacing = 35*(j+8);
             var seat = row+j.toString();
             var test = document.createElement('span');
             test.setAttribute("class","seatOff");
@@ -38,10 +41,10 @@ var seatsSelected = document.getElementById('seatsSelected');
 function seatSelect() {
     var preName = event.srcElement.id
     var seatName = preName+", ";
-    console.log("MAX: "+seatBuy);
+    console.log("MAX: "+ticketCount);
 
         if (event.srcElement.className != 'seatSelect') {
-            if (seatSelectedCount < seatBuy) {
+            if (seatSelectedCount < ticketCount) {
                 seatSelectedCount++;
                 event.srcElement.setAttribute("class","seatSelect");
                 var node = document.createElement("p");
