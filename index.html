@@ -1,97 +1,212 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 
 <head>
-  <title>Mitch Heath</title>
-  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" />
-  <link rel="stylesheet" type="text/css" href=" https://use.typekit.net/af/f80f1d/00000000000000003b9aefb8/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191"/>
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mitchell Heath</title>
+    <!-- <link rel="stylesheet" href="https://cdn.rawgit.com/jgthms/minireset.css/master/minireset.css">
+    <link rel="stylesheet" href="index.css"> -->
+    <link rel="stylesheet" href="debug.css">
+    <link rel="stylesheet" href="paper.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async="" defer=""></script>
+
+
+
+
 </head>
 
 <body>
-  <script src ="./js/styling.js"></script>
-  <!-- <script src ="./js/dnd.js"></script> -->
-  <div id="main">
-    <div id="header">
-      <div id="logo">
-        <h1 id ="drag-1" class="draggable">Mitchell Heath <a href="#">QAC</a></h1>
-        <div class="slogan">Digital CV</div>
-      </div>
-      <div id="menubar">
-        <ul id="menu">
-          <li class="current"><a href="./index.html">Home</a></li>
-          <li><a href="./include/projects.html">Projects</a></li>
-          <li><a href="./include/skills.html">Skills</a></li>
-          <li><a href="./include/contact.html">Contact</a></li>
-          <li><a href="./javaExercises.html">Exercises</a></li>
-          
-        </ul>
-      </div>
-    </div>
-    <div id="site_content">
-      <div id="sidebar_container">
-        <div class="sidebar">
-          <h3>Latest Project</h3>
-          <h4>Website</h4>
-          <h5>4th Septemer 2018</h5>
-          <a href="./include/projects.html">Read more</a>
-        </div>
-        <div class="sidebar">
-          <h3>Interested? </h3>
-          <p>Email me:.</p>
-          <form method="post" action="#" id="emailme">
-            <p style="padding: 0 0 9px 0;"><input class="search" type="text" name="email_address" placeholder="Your email..." onclick="javascript: document.forms['emailme'].email_address.value=''"
-              /></p>
-            <p><input class="emailme" name="emailme" type="submit" value="Send Email" /></p>
-          </form>
-        </div>
-        <div class="sidebar">
-          <h3>LinkedIn</h3>
-          <h4>See me previous employment and experiences</h4>
-          <h5>4th September 2018</h5>
-          <p><br /><a href="https://www.linkedin.com/in/mitchheathuk/">Connect with me</a></p>
-        </div>
-      </div>
-      <div id="content">
 
-        <h1>Welcome to my digital CV</h1>
-        <p>This is a simple design following <a href="https://consulting.qa.com/">QAC</a>'s inhouse style as the colour theme.</p>
-        <p>I want this in <strong>bold</strong> .</p>
-        <p>Check out my previous <a href="projects.html">projects</a> page.</p>
-        <p>Some facts about me:</p>
-        <ul>
-          <li>I am called Mitchell</li>
-          <li id="hoverColor" onmouseover="hover(this)" onmouseout="hoverOff(this)">This is a digital CV</li>
-          <li>Microwave</li>
-        </ul>
-        </br>
-        <h1> About me</h1>
-        <img id="picme" onmouseover="hover(this)" onmouseout="hoverOff(this)" alt="Me" src="./img/me_picture.png" align="right" />
-        <h2>Who am I?</h2>
+    <div id="page">
 
-        <p onmouseover="mouseOn()"> In-between academic, work and personal commitments I have familiarised myself with key concepts of programming. This
-          includes control logic of variables and data structures as well as object-oriented programming concepts i.e. Encapsulation,
-          Abstraction, Inheritance and Polymorphism. Where applicable, I have utilised this knowledge in C, C#, HTML, Java
-          and more recently Python aand want to </p>
+        <h1>MITCHELL HEATH</h1>
+        <nav class="navbar">
+            <ul id="link">
+                <li v-on:click="setTab('home')" onclick="select(this)">
+                    <a href="#" onclick="return false;">HOME</a>
+                </li>
+                <li v-on:click="setTab('skills')" onclick="select(this)">
+                    <a href="#" onclick="return false;">EXPERIENCE</a>
+                </li>
+                <li v-on:click="setTab('projects')" onclick="select(this)">
+                    <a href="#" onclick="return false;">PROJECTS</a>
+                </li>
+                <li v-on:click="setTab('links')" onclick="select(this)">
+                    <a href="#" onclick="return false;">LINKS</a>
+                </li>
+            </ul>
+        </nav>
+        <div id="content">
+            <template v-if="tab==home">
+                <h2>Qualifications</h2>
+                <div class="center">
+                    <table style="width:100%">
+                        <tr>
+                            <th> BCS Certificate in ISTQB Foundations</th>
+                            <th>2018</th>
+                            <th>QA Consulting</th>
+                        </tr>
+                        <tr>
+                            <th> BEng (Hons) Chemical Engineering</th>
+                            <th>2015-18</th>
+                            <th>Lancaster University</th>
+                        </tr>
+                    </table>
+                </div>
 
-        <h2>Certificates</h2>
-        <p> ISTQB (almost) </p>
-        <p> Bachelor of Engineering in Chemical Engineering </p>
-        <h2>Education</h2>
-        <p> Upper Second in Chemical Engineering, Lancaster University 2015-18 </p>
-        <h2>Work Experience</h2>
-        <p> Lorem </p>
-        <div class="split right">
-          <h2>Hobbies</h2>
-          <i>To be continued...</i> </p>
+                <h2>Profile</h2>
+                <p>I am a Chemical Engineering graduate with an interest in challenging environments to utilise my analytical
+                    and creative nature, which has led to self-taught competency in many skills. I believe a continuous personal
+                    and career development path is the key factor when considering opportunities to remain ahead in the dynamic
+                    market.
+                </p>
+                <p>Coming from a ‘non-technical’ background I feel I have something to prove. I commute for 2 hours every single
+                    day before and after work and have never missed a day or been late. This is because solving problems
+                    with computer programming gives me much more fulfilment than in Chemical Engineering. Despite this, I
+                    managed to persevere through my course and earn a 2:1 whilst working at a local cinema, as I knew it
+                    was a versatile discipline.</p>
+                <p>Many of my experiences involve presenting or communicating with teams and people of all ages and backgrounds,
+                    allowing me to confidently express my ideas through excellent written and oral presentation skills.</p>
+
+
+                <p> In-between academic, work and personal commitments I have familiarised myself with key concepts of programming.
+                    This includes control logic of variables and data structures as well as object-oriented programming concepts
+                    i.e. Encapsulation, Abstraction, Inheritance and Polymorphism. Where applicable, I have utilised this
+                    knowledge in C, C#, HTML, Java and more recently Python aand want to </p>
+
+                <h2>Experience</h2>
+                <h3>
+                    QA Consulting - Consultant
+                </h3>
+                <p>
+                    During my time at university I was an Engineering Society Executive, a host for multiple engineering-related events including
+                    the IET Faraday Challenge and ‘Engineering Days’ for local school children. I also supported myself through
+                    university was a part time job, in which I was top VIP salesperson every month since being hired due
+                    to my energetic and persistent nature when working.
+                </p>
+                <h3>
+                    Lancaster University - Student
+                </h3>
+                <p>
+                    During my time at university I was an Engineering Society Executive, a host for multiple engineering-related events including
+                    the IET Faraday Challenge and ‘Engineering Days’ for local school children. I also supported myself through
+                    university was a part time job, in which I was top VIP salesperson every month since being hired due
+                    to my energetic and persistent nature when working.
+                </p>
+                <p> Lorem </p>
+                <h2>Interests</h2>
+                <p>I take pride in being self-sufficient, particularly in media creation. This includes graphic design and audio
+                    production, which I aim to take advantage of in my personal projects including a mobile game which I
+                    am currently working on in a licensed game engine, I also enjoy watching and partaking in combat sports,
+                    as well as walking my many dogs and frequenting the cinema to give myself some down time.</p>
+                <i>To be continued...</i>
+            </template>
+            <template v-if="tab==projects">
+                <h2>Projects</h2>
+                <h3>Cinema Seating, Drag and Drop system and Digital CV
+                    <div class="right">JavaScript, HTML & CSS</div>
+                </h3>
+                <p>In my commute time I have produced interactive web pages utilising my front end knowledge without the use
+                    of external libraries or frameworks due to little or no data signal. This is due to front-end development
+                    being my favourite, particularly the UI design and interaction as it allows me to produce tangible products.</p>
+                <h3>Random Object Generation Game
+                    <div class="right">Java</div>
+                </h3>
+                <p>For my first assessment I went beyond the requirements and implemented a score-tracking system as well as
+                    randomly generated objects for the user to collect with certain conditions.</p>
+                <h3>Full StackTesting
+                    <div class="right">Automated Testing</div>
+                </h3>
+                <p>I have automated tests for website usability as well as database response times with JUnit, Selenium, Cucumber
+                    and JDBC in JMeter. REST API methods were also tested in SOAP-UI, Eclipse and JMeter to retrieve data
+                    from various APIs. All tests involved extent reports and writing to XLSX files. Step definitions were
+                    developed from feature files produced for Cucumber</p>
+                <h3>Innovate Banking App pitched to Barclays, BBC and Bank of America Merrill Lynch</h3>
+                <p>I have automated tests for website usability as well as database response times with JUnit, Selenium, Cucumber
+                    and JDBC in JMeter. REST API methods were also tested in SOAP-UI, Eclipse and JMeter to retrieve data
+                    from various APIs. All tests involved extent reports and writing to XLSX files. Step definitions were
+                    developed from feature files produced for Cucumber.</p>
+            </template>
+            <template v-if="tab==skills">
+                <h2>Roles & Responsibility</h2>
+
+                <h3>
+                    <span class="left">2017</span>
+                    <span class="mid">Finalist</span>
+                    <span class="right">Barclays Technology Challenge</span>
+                </h3>
+                <h3>
+                    <span class="left">2016-17</span>
+                    <span class="mid">Communications & Publicity Officer</span>
+                    <span class="right">Engineering Society</span>
+                </h3>
+                <h3>
+                    <span class="left">2017</span>
+                    <span class="mid">Engineering Day Host</span>
+                    <span class="right">Lancaster University</span>
+                </h3>
+                <h3>
+                    <span class="left">2017</span>
+                    <span class="mid">Faraday Challenge Host</span>
+                    <span class="right">Institution of Engineering and Technology</span>
+                </h3>
+                <h3>
+                    <span class="left">2017-18</span>
+                    <span class="mid">Undergraduate representative</span>
+                    <span class="right">GRB (Graduate Recruitment Bureau)</span>
+                </h3>
+
+                <h2>Employment</h2>
+                <h3>
+                    <span class="left">2017-18</span>
+                    <span class="mid">Customer Sales Assistant</span>
+                    <span class="right">Vue Cinemas</span>
+                </h3>
+                <p></br></p>
+                <h3>
+                    <span class="left">Other:</span>
+                    <span class="mid">Student Ambassador, Lab Technician, Bar Work, Catering, Manual Labourer, Dog Grooming</span>
+                </h3>
+
+            </template>
+            <template v-if="tab==links">
+                <h2>Useful Links</h2>
+                <div class="center">
+                        <a href="https://google.com"><button>Text</button></a>
+                    <table id="linktable">
+                        <tr>
+                            <th>
+                                <a href="https://www.linkedin.com/in/mitchheathuk/">LinkedIn</a>
+                            </th>
+                            <th>
+                                <a href="https://github.com/mitch-heath">GitHub</a>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>https://www.linkedin.com/in/mitchheathuk/</th>
+                            <th>https://github.com/mitch-heath</th>
+                        </tr>
+                    </table>
+                </div>
+            </template>
         </div>
-      </div>
+        <div id="up">
+            <span id="arrow">
+                <a href="#">
+                    <img src="up.png" width="42" height="42" />
+                </a>
+            </span>
+        </div>
     </div>
-    <div id="footer">
-      <p>Copyright &copy; Mitch Heath | <a href="https://www.linkedin.com/in/mitchheathuk/">  LinkedIn</a> | <a href="https://github.com/mitch-heath/">  GitHub</a></p>
-    </div>
-  </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js "></script>
+    <span id="footer">
+        <p>Copyright &copy; 2018 Mitch Heath
+        </p>
+    </span>
 </body>
 
 </html>
